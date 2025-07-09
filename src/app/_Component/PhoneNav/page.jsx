@@ -7,10 +7,10 @@ import Link from 'next/link'
 
 export default function PhoneNav() {
     const sidbarDetails = [
-          { name: "الرئيسيه", url: "/", icon: <IoHomeSharp /> },
-          { name: "القراء", url: "", icon: <FaMusic /> },
-          { name: "السور", url: "", icon: <IoIosBook /> },
-          { name: "مباشر", url: "", icon: <BsBroadcast /> },
+         { name: "الرئيسيه", url: "/", icon: <IoHomeSharp /> },
+                { name: "القراء", url: "./Reader", icon: <FaMusic /> },
+                { name: "السور", url: "./Surah", icon: <IoIosBook /> },
+                { name: "مباشر", url: "./Direct", icon: <BsBroadcast /> },
       ];
   return (
     <div className='w-full h-screen bg-black/50 text-white'>
