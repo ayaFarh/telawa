@@ -8,7 +8,7 @@ import { IoLogoGithub } from "react-icons/io";
 
 export default function Footer() {
   return (
-    <div className='rounded-t-xl mt-4  text-gray-300 bg-[rgb(18,18,18)] absolute bottom-0 left-0 right-0 '> 
+    <div className='rounded-t-xl mt-4  text-gray-300 bg-[rgb(18,18,18)] absolute bottom-[-1] left-0 right-0 '> 
   <div className='containerA '>
     <div className='grid grid-cols-12  gap-4 py-8'>
         {/* القران */}

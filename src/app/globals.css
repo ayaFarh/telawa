@@ -86,3 +86,35 @@ body {
         transform: rotate(0deg);
       }
     }
+
+
+    /* audio player */
+.rhap_container {
+  background-color: #0a0a0a !important;
+  border-radius: 0.5rem;
+}
+.rhap_play-pause-button {
+  color: #22c55e !important;
+}
+
+.rhap_container {
+  direction: ltr !important;
+}
+
+
+.rhap_container {
+  background-color: gray;
+  border-radius: 0.75rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+
+.rhap_play-pause-button svg {
+  color: #22c55e;
+}
+
+
+.rhap_main-controls-button, .rhap_time {
+  font-family: 'Cairo', sans-serif;
+  direction: ltr;
+}

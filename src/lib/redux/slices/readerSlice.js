@@ -15,6 +15,18 @@ export const getAllReader=createAsyncThunk("reader/getAllReader",async()=>{
 })
 
 
+export const getSpacialReader=createAsyncThunk("reader/getSpacialReader",async(id)=>{
+        try {
+          
+           const{data}=await axios.get(`https://mp3quran.net/api/v3/reciters?language=ar&reciter=${id}`)
+           return data.reciters
+
+        }catch(err){
+            console.log(err)
+        }
+})
+
+
 const readerSlice=createSlice({
     name:"reader",
     initialState:{
@@ -36,6 +48,16 @@ const readerSlice=createSlice({
             state.error=true
         })
         .addCase(getAllReader.pending,(state,action)=>{
+            state.loading=true
+        })
+        .addCase(getSpacialReader.fulfilled,(state,action)=>{
+            state.reader=action.payload
+            state.loading=false
+        })
+        .addCase(getSpacialReader.rejected,(state,action)=>{
+            state.error=true
+        })
+        .addCase(getSpacialReader.pending,(state,action)=>{
             state.loading=true
         })
     }
