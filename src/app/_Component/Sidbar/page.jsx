@@ -8,9 +8,9 @@ import { BsBroadcast } from "react-icons/bs";
 export default function Sidbar() {
     const sidbarDetails = [
         { name: "الرئيسيه", url: "/", icon: <IoHomeSharp /> },
-        { name: "القراء", url: "./Reader", icon: <FaMusic /> },
-        { name: "السور", url: "./Surah", icon: <IoIosBook /> },
-        { name: "مباشر", url: "./Direct", icon: <BsBroadcast /> },
+        { name: "القراء", url: "/Reader", icon: <FaMusic /> },
+        { name: "السور", url: "/Surah", icon: <IoIosBook /> },
+        { name: "مباشر", url: "/Direct", icon: <BsBroadcast /> },
     ];
 
     return (

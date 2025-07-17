@@ -28,7 +28,7 @@ export default function PhoneNav({ onClose }) {
       >
         <motion.div 
           className='p-4 h-full w-full bg-black' 
-          onClick={(e) => e.stopPropagation()} // عشان الكليك جوه القائمة ما يقفلهاش
+          onClick={(e) => e.stopPropagation()} 
         >
           <input
             type='text'
