@@ -90,7 +90,7 @@ body {
 
     /* audio player */
 .rhap_container {
-  background-color: #0a0a0a !important;
+  background-color:rgb(18,18,18) !important;
   border-radius: 0.5rem;
 }
 .rhap_play-pause-button {

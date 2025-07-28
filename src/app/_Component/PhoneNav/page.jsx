@@ -13,9 +13,10 @@ import { PiRadioBold } from "react-icons/pi";
 export default function PhoneNav({ onClose }) {
   const sidbarDetails = [
     { name: "الرئيسيه", url: "/", icon: <IoHomeSharp /> },
+     { name: "راديو", url: "/Radio", icon: <PiRadioBold /> },
     { name: "القراء", url: "/Reader", icon: <FaMusic /> },
     { name: "السور", url: "/Surah", icon: <IoIosBook /> },
-    { name: "راديو", url: "/Radio", icon: <PiRadioBold /> },
+   
     { name: "مباشر", url: "/Direct", icon: <BsBroadcast /> },
   ];
 
@@ -36,7 +37,7 @@ export default function PhoneNav({ onClose }) {
           <input
             type='text'
             className='rounded-full w-full bg-[rgb(42,42,42)] p-2 mb-4'
-            placeholder='الي ماذا تريد ان تستمع؟'
+            placeholder='ابحث باسم السوره او القارئ؟'
           />
 
           <div className='py-3'>

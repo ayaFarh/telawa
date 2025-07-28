@@ -10,9 +10,10 @@ import { PiRadioBold } from "react-icons/pi";
 export default function Sidbar() {
     const sidbarDetails = [
         { name: "الرئيسيه", url: "/", icon: <IoHomeSharp /> },
+         { name: "راديو", url: "/Radio", icon: <PiRadioBold /> },
         { name: "القراء", url: "/Reader", icon: <FaMusic /> },
         { name: "السور", url: "/Surah", icon: <IoIosBook /> },
-        { name: "راديو", url: "/Radio", icon: <PiRadioBold /> },
+       
         { name: "مباشر", url: "/Direct", icon: <BsBroadcast /> },
     ];
 
