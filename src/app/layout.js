@@ -33,7 +33,7 @@ export default function RootLayout({ children }) {
            <Sidbar  />
         </div>
         <div className="md:col-span-9 col-span-12 p-2 min-h-screen  bg-black rounded  relative ">
-          <div className="mb-[300px] min-h-screen">
+          <div className="mb-[300px] min-h-screen max-[640px]:pb-[240px] ">
             <StoreProvider>{children}</StoreProvider>
           </div>
           <Footer/>

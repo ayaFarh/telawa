@@ -1,7 +1,8 @@
+import Home from "./Home/page";
 
 
-export default function Home() {
+export default function page() {
   return (
-    <div className="text-3xl bg-[rgb(18,18,18)]">مرحبا</div>
+    <Home/>
   )
 }

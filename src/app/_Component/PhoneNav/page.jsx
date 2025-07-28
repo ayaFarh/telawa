@@ -7,13 +7,16 @@ import { IoIosBook } from "react-icons/io";
 import { BsBroadcast } from "react-icons/bs";
 import Link from 'next/link'
 import { motion, AnimatePresence } from 'framer-motion';
+import { PiRadioBold } from "react-icons/pi";
+
 
 export default function PhoneNav({ onClose }) {
   const sidbarDetails = [
     { name: "الرئيسيه", url: "/", icon: <IoHomeSharp /> },
-    { name: "القراء", url: "./Reader", icon: <FaMusic /> },
-    { name: "السور", url: "./Surah", icon: <IoIosBook /> },
-    { name: "مباشر", url: "./Direct", icon: <BsBroadcast /> },
+    { name: "القراء", url: "/Reader", icon: <FaMusic /> },
+    { name: "السور", url: "/Surah", icon: <IoIosBook /> },
+    { name: "راديو", url: "/Radio", icon: <PiRadioBold /> },
+    { name: "مباشر", url: "/Direct", icon: <BsBroadcast /> },
   ];
 
   return (

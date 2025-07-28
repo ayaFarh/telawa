@@ -5,5 +5,6 @@ export const API ={
     Allsurah:`${BASE_URL}/surahs?language=ar`,
     Allayah:`${BASE_URL}/ayahs?language=ar`,
     Alljuz:`${BASE_URL}/juzs?language=ar`,
-    DetailsOffAllSurh:`${BASE_URL}/suwar?language=ar`
+    DetailsOffAllSurh:`${BASE_URL}/suwar?language=ar`,
+    radio:`${BASE_URL}/radios?language=ar`,
 }
