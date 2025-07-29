@@ -9,15 +9,20 @@ import AudioPlayer from 'react-h5-audio-player';
 import 'react-h5-audio-player/lib/styles.css';
 import { FaRegHeart } from "react-icons/fa";
 import { IoIosCloudDownload } from "react-icons/io";
+import { getAllSurah } from '@/lib/redux/slices/surhSlice';
+import { FaPlay } from "react-icons/fa6";
+
 
 
 
 export default function ReaderDetailsInfo() {
   const { reader, loading, error } = useSelector(state => state.reader);
+   const { surah, loading: surahLoading, error: surahError } = useSelector(state => state.surah);
    const dispatch = useDispatch()
    const params = useParams();
    const id = params.id
-
+ console.log(surah);
+ 
   const [selectedMoshafIndex, setSelectedMoshafIndex] = useState(0);
    const [currantSurah, setCurrentSurah] = useState("001");
    const moshafList= reader[0]?.moshaf || []
@@ -32,6 +37,10 @@ export default function ReaderDetailsInfo() {
    
     useEffect(() => {
         dispatch(getSpacialReader(id))
+    },[])
+
+useEffect(() => {
+        dispatch(getAllSurah())
     },[])
   return (
     <div className='space-y-4'>
@@ -70,35 +79,40 @@ export default function ReaderDetailsInfo() {
       {/* ✅ مشغل الصوت */}
       <AudioPlayer
       key={currantSurah}
+       
         src={`${selectedMoshaf.server}${currantSurah}.mp3`}
-        className="w-full mb-4 "
+        className="w-full fixed bottom-0 left-0 z-[4444]"
       />
 
       {/* ✅ عرض السور */}
       <div className="w-full overflow-y-auto">
-        {selectedMoshaf.surah_list.split(",").map((num) => (
-        <div 
-       
-        className='flex items-center justify-between  bg-black hover:bg-[rgba(42,42,42)] px-2 py-4 text-white text-sm rounded' key={num}> 
-        <div className='flex items-center cursor-pointer gap-2'
-         onClick={() => handlePlay(num)}
+        {selectedMoshaf.surah_list
+  .split(",")
+  .map((num) => {
+    const surahInfo = surah.find((s) => s.id === Number(num));
+    return (
+      <div
+        className='flex items-center justify-between  hover:bg-[rgba(42,42,42)] px-2 py-4 text-white text-xl  group transition-all duration-200'
+        key={num}
+      >
+        <div
+          className='flex items-center cursor-pointer gap-2  justify-center ' 
+          onClick={() => handlePlay(num)}
         >
-           <button
-            key={num}
-          >
-          {num}
-          </button>
-          <div className='w-[40px] h-[40px] rounded bg-[rgba(66,66,66)]' ></div>
-         
-        </div>
-          <div className='flex gap-2'>
-            <FaRegHeart />
-            <IoIosCloudDownload />
+          <button className='min-w-[30px]  text-xl  group-hover:hidden'>{num}</button>
+          <FaPlay className='hidden text-xl min-w-[30px] text-green-600 group-hover:block ' />
 
-             
-          </div>
+          <div className='w-12 h-12 bg-[rgba(18,18,18)] rounded'></div>
+          <span className='text-md text-white font-semibold'>{surahInfo?.name || "سورة غير معروفة"}</span>
         </div>
-        ))}
+        <div className='flex gap-2'>
+          <FaRegHeart />
+          <IoIosCloudDownload />
+        </div>
+      </div>
+    );
+  })}
+
       </div>
          </div>
         </div>

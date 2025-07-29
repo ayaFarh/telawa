@@ -9,6 +9,7 @@ import { useDispatch, useSelector } from 'react-redux';
 export default function AllSurahs() {
   const { surah, loading, error } = useSelector(state => state.surah);
   const dispatch = useDispatch();
+console.log(surah);
 
   useEffect(() => {
     dispatch(getAllSurah());
