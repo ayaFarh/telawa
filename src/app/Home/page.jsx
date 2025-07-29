@@ -1,7 +1,9 @@
 import React from 'react'
+import HeroSection from './_Component/HeroSection'
 
 export default function Home() {
   return (
-    <div className='text-white'>Home</div>
+   
+    <HeroSection/>
   )
 }
