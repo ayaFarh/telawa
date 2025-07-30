@@ -1,4 +1,4 @@
-import { Geist, Geist_Mono ,Cairo} from "next/font/google";
+import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import StoreProvider from "./StoreProvider";
 import Navbar from "./_Component/Navbar/page";
@@ -26,19 +26,20 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-black`}
       >
-        <Navbar/>
-        
-       <div className="grid grid-cols-12 gap-1 mt-20">
-        <div className="md:col-span-3 bg-[rgb(18,18,18)] rounded">
-           <Sidbar  />
-        </div>
-        <div className="md:col-span-9 col-span-12 p-2 min-h-screen  bg-black rounded  relative ">
-          <div className="mb-[300px] min-h-screen max-[640px]:pb-[240px] ">
-            <StoreProvider>{children}</StoreProvider>
+        <StoreProvider> {/* 🔁 لف كل المحتوى داخل الـ StoreProvider */}
+          <Navbar />
+          <div className="grid grid-cols-12 gap-1 mt-20">
+            <div className="md:col-span-3 bg-[rgb(18,18,18)] rounded">
+              <Sidbar />
+            </div>
+            <div className="md:col-span-9 col-span-12 p-2 min-h-screen bg-black rounded relative">
+              <div className="mb-[300px] min-h-screen max-[640px]:pb-[240px]">
+                {children}
+              </div>
+              <Footer />
+            </div>
           </div>
-          <Footer/>
-        </div>
-       </div>
+        </StoreProvider>
       </body>
     </html>
   );

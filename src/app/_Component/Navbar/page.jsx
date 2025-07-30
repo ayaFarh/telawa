@@ -7,6 +7,8 @@ import PhoneNav from '../PhoneNav/page';
 import { FaBars } from "react-icons/fa6";
 import { FaXmark } from "react-icons/fa6";
 import { motion, AnimatePresence } from 'framer-motion'
+import SearchInpute from '../SearchList/SearchInpute';
+
 
 
 export default function Navbar() {
@@ -64,11 +66,12 @@ export default function Navbar() {
         </div>
          {/* بوكس البحث (ديسكتوب فقط) */}
          <div className='md:block hidden w-[380px]'>
-            <input 
+          <SearchInpute/>
+            {/* <input 
               type='text' 
               className='rounded-full w-full bg-[rgb(42,42,42)] p-2  outline-none text-gray-300' 
               placeholder='ابحث باسم السوره او القارئ ؟' 
-            />
+            /> */}
           </div>
 
         {/* تسجيل الدخول وإنشاء حساب (ديسكتوب فقط) */}

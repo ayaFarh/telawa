@@ -4,20 +4,19 @@ import axios from "axios"
 
 export const getAllReader = createAsyncThunk(
   "reader/getAllReader",
-  async () => {
+  async (searchName = "", thunkAPI) => {
     try {
       const { data } = await axios.get(
-        `${API.Allreciter}`
+        `https://mp3quran.net/api/v3/reciters?language=ar&search=${encodeURIComponent(searchName)}`
       );
-      console.log(data);
-      
       return data.reciters;
     } catch (err) {
-      console.log(err);
-      throw err;
+      console.error(err);
+      return thunkAPI.rejectWithValue(err.response?.data || err.message);
     }
   }
 );
+
 
 
 export const getSpacialReader=createAsyncThunk("reader/getSpacialReader",async(id)=>{
@@ -33,19 +32,21 @@ export const getSpacialReader=createAsyncThunk("reader/getSpacialReader",async(i
 
 
 const readerSlice=createSlice({
-    name:"reader",
-    initialState:{
-        reader:[],
-        loading:false,
-        error:false
+   name: "reader",
+  initialState: {
+    allReaders: [],
+    reader: [],
+    loading: false,
+    error: false,
+  },
+  reducers: {
+    setReader: (state, action) => {
+      state.reader = action.payload;
     },
-    reducers:{
-        setReader:(state,action)=>{
-            state.reader=action.payload
-        },
-    },
+  },
     extraReducers:(builder)=>{
         builder.addCase(getAllReader.fulfilled,(state,action)=>{
+            state.allReaders=action.payload
             state.reader=action.payload
             state.loading=false
         })
