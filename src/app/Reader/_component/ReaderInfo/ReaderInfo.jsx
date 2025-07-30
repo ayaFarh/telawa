@@ -30,6 +30,7 @@ export default function ReaderInfo() {
             {reader.map((reciter) => (
               <Link
                 href={`/Reader/${reciter.id}`}
+                 prefetch={true}
                 key={reciter.id}
                 className="reader-card flex flex-col items-center justify-center px-1 py-3 hover:bg-[rgb(42,42,42)] transition-all duration-100 rounded"
               >
