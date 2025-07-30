@@ -56,13 +56,13 @@ export default function SuwerDetails() {
           <div onClick={handleNext} className='bg-[rgba(42,42,42)] py-2 px-6 rounded cursor-pointer '>next</div>
           <div onClick={handlePrev} className='bg-[rgba(42,42,42)] py-2 px-6 rounded cursor-pointer '>prev</div>
       </div>
-        <div className='flex flex-col items-center justify-center w-full h-full min-h-screen bg-white border border-gray-300 shadow-2xl rounded'>
+        <div className='flex flex-col items-center justify-center w-full h-full  bg-white border border-gray-300 shadow-2xl rounded'>
           
           {loading ? (<Loader/>):(
           currentPage ? (
   <img src={currentPage} alt="page" className="w-full max-w-4xl" />
 ) : (
-  <p className='text-gray-500'>بسم الله الرحمن الرحيم</p>
+  <div className='text-gray-500 text-3xl min-h-screen flex items-center justify-center '>بسم الله الرحمن الرحيم</div>
 )
         )
 }
