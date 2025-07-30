@@ -61,16 +61,12 @@ export default function Navbar() {
         )}
       </AnimatePresence>
     </div>
-
-
-         
-         
         </div>
          {/* بوكس البحث (ديسكتوب فقط) */}
          <div className='md:block hidden w-[380px]'>
             <input 
               type='text' 
-              className='rounded-full w-full bg-[rgb(42,42,42)] p-2 text-white' 
+              className='rounded-full w-full bg-[rgb(42,42,42)] p-2  outline-none text-gray-300' 
               placeholder='ابحث باسم السوره او القارئ ؟' 
             />
           </div>

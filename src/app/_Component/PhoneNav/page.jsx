@@ -36,7 +36,7 @@ export default function PhoneNav({ onClose }) {
         >
           <input
             type='text'
-            className='rounded-full w-full bg-[rgb(42,42,42)] p-2 mb-4'
+            className='rounded-full w-full bg-[rgb(42,42,42)] p-2 mb-4 outline-none text-gray-300'
             placeholder='ابحث باسم السوره او القارئ؟'
           />
 
