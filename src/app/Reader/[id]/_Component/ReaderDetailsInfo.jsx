@@ -20,6 +20,7 @@ export default function ReaderDetailsInfo() {
   const dispatch = useDispatch();
   const params = useParams();
   const id = params.id;
+console.log(reader);
 
   const [selectedMoshafIndex, setSelectedMoshafIndex] = useState(0);
   const [currantSurah, setCurrentSurah] = useState("001");
@@ -116,9 +117,6 @@ export default function ReaderDetailsInfo() {
                     <IoIosCloudDownload />
                   </div>
                 </div>
-
-
-
               );
             })}
           </div>

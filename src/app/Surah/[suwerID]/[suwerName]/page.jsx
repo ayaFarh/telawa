@@ -58,7 +58,7 @@ export default function SuwerDetails() {
       </div>
         <div className='flex flex-col items-center justify-center w-full h-full  bg-white border border-gray-300 shadow-2xl rounded'>
           
-          {loading ? (<Loader/>):(
+          {loading ? (<div className='flex items-center justify-center min-h-screen'><Loader /></div>):(
           currentPage ? (
   <img src={currentPage} alt="page" className="w-full max-w-4xl" />
 ) : (

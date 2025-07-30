@@ -2,17 +2,22 @@ import { API } from "@/app/_Component/Api/Api"
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit"
 import axios from "axios"
 
-export const getAllReader=createAsyncThunk("reader/getAllReader",async()=>{
-        try {
-          
-           const{data}=await axios.get(`${API.Allreciter}`)
-           console.log(data.reciters);
-           
-           return data.reciters
-        }catch(err){
-            console.log(err)
-        }
-})
+export const getAllReader = createAsyncThunk(
+  "reader/getAllReader",
+  async () => {
+    try {
+      const { data } = await axios.get(
+        `${API.Allreciter}`
+      );
+      console.log(data);
+      
+      return data.reciters;
+    } catch (err) {
+      console.log(err);
+      throw err;
+    }
+  }
+);
 
 
 export const getSpacialReader=createAsyncThunk("reader/getSpacialReader",async(id)=>{

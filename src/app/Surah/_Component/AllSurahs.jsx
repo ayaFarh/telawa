@@ -21,7 +21,7 @@ console.log(surah);
 
       {loading ? (
         <div className="flex justify-center items-center min-h-screen">
-          <Loader />
+          <Loader  />
         </div>
       ) : (
         <div className='grid grid-cols-3 md:grid-cols-4 max-[388px]:grid-cols-2 lg:grid-cols-6 gap-4'>
