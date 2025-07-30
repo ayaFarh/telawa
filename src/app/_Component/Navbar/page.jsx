@@ -20,12 +20,16 @@ export default function Navbar() {
         <div className='flex items-center justify-between md:justify-center gap-4 w-full md:w-fit'>
           
           {/* اللوجو */}
-          <Link href="/">
+          <Link href="/"
+          onClick={() => setSmallScreen(false)}
+          >
             <Image src="/images.png" className='rounded-full' width={50} height={50} alt='logo' />
           </Link>
 
           {/* زرار الهوم */}
-          <Link href="/" className='inline-block text-white text-2xl p-4 bg-[rgb(42,42,42)] rounded-full'>
+          <Link href="/" className='inline-block text-white text-2xl p-4 bg-[rgb(42,42,42)] rounded-full'
+           onClick={() => setSmallScreen(false)}
+          >
             <IoHomeSharp />
           </Link>
 
