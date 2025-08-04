@@ -16,13 +16,11 @@ export default function Footer() {
           <p className='text-white flex items-center gap-2 text-2xl mb-2   '>
             القران
           </p> 
-          <Link href={""} className='flex items-center gap-2 text-xl  hover:text-white transition-all duration-100 '>
-           عن القران
-          </Link>
-           <Link href={""} className='flex items-center gap-2 text-xl  hover:text-white transition-all duration-100'>
+         
+           <Link href={"/Surah"} className='flex items-center gap-2 text-xl  hover:text-white transition-all duration-100'>
            سور القران
           </Link>
-           <Link href={""} className='flex items-center gap-2 text-xl  hover:text-white transition-all duration-100'>
+           <Link href={"/Reader"} className='flex items-center gap-2 text-xl  hover:text-white transition-all duration-100'>
            القراء
           </Link>
          
@@ -39,20 +37,15 @@ export default function Footer() {
            <FaFacebook />
             فيس بوك
           </Link> 
-           <Link href={""} className='flex items-center gap-2 text-xl  hover:text-white transition-all duration-100'>
-          <IoLogoGithub />
-            جيت هاب
-          </Link> 
         </div>
-
 
         {/* الحقوق  */}
         <div className='col-span-12 md:col-span-4 sm:col-span-4'>
             <p className='text-2xl mb-2 text-white'>الحقوق</p>
-            <Link href={""} className='flex items-center gap-2 text-xl  hover:text-white transition-all duration-100'>
+            <Link href={"/"} className='flex items-center gap-2 text-xl  hover:text-white transition-all duration-100'>
             حقوق النشر
           </Link>
-          <Link href={""} className='flex items-center gap-2 text-xl  hover:text-white transition-all duration-100'>
+          <Link href={"/"} className='flex items-center gap-2 text-xl  hover:text-white transition-all duration-100'>
             سياسة الخصوصية
           </Link>
         </div>
